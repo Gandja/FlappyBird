@@ -10,7 +10,7 @@ public class GameThread extends Thread {
     SurfaceHolder surfaceHolder; //SurfaceHolder object reference
     boolean isRunning;           //Flag to detect whether the thread is running or not
     long startTime, loopTime;   //Loop start time and loop duration
-    long DELAY = 33;            //Delay in milliseconds between screen refreshes
+    long DELAY = 30;            //Delay in milliseconds between screen refreshes
 
     public GameThread(SurfaceHolder surfaceHolder) {
         this.surfaceHolder = surfaceHolder;

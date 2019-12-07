@@ -9,7 +9,7 @@ public class BitmapBank {
     Bitmap background;
     Bitmap[] bird;
     Bitmap tubeTop, tubeBottom;
-    
+
 
     public BitmapBank(Resources resources) {
         //get main background image
@@ -17,12 +17,12 @@ public class BitmapBank {
         background = scaleImage(background);
         //get bird
         bird = new Bitmap[4];
-        bird[0] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame1);
-        bird[1] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame2);
-        bird[2] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame3);
-        bird[3] = BitmapFactory.decodeResource(resources,R.drawable.bird_frame4);
-        tubeTop = BitmapFactory.decodeResource(resources,R.drawable.red_tube_top);
-        tubeBottom = BitmapFactory.decodeResource(resources,R.drawable.red_tube_bottom);
+        bird[0] = BitmapFactory.decodeResource(resources, R.drawable.bird_frame1);
+        bird[1] = BitmapFactory.decodeResource(resources, R.drawable.bird_frame2);
+        bird[2] = BitmapFactory.decodeResource(resources, R.drawable.bird_frame3);
+        bird[3] = BitmapFactory.decodeResource(resources, R.drawable.bird_frame4);
+        tubeTop = BitmapFactory.decodeResource(resources, R.drawable.red_tube_top);
+        tubeBottom = BitmapFactory.decodeResource(resources, R.drawable.red_tube_bottom);
     }
 
     public Bitmap[] getBird() {
@@ -38,7 +38,7 @@ public class BitmapBank {
     }
 
     public int getTubeWidth() {
-        return  tubeTop.getWidth();
+        return tubeTop.getWidth();
     }
 
     public int getTubeHeight() {
@@ -49,7 +49,7 @@ public class BitmapBank {
         return bird[frame];
     }
 
-    public  int getBirdWidth() {
+    public int getBirdWidth() {
         return bird[0].getWidth();
     }
 
@@ -69,7 +69,7 @@ public class BitmapBank {
         return background.getHeight();
     }
 
-    public Bitmap scaleImage(Bitmap bitmap){
+    public Bitmap scaleImage(Bitmap bitmap) {
         float widthHeightRatio = getBackgroundWidth() / getBackgrountHeight();
         /*
         We'll multiply widthHeightRatio with screenHeight to get scaled width bitmap.

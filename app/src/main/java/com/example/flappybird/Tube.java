@@ -8,41 +8,41 @@ public class Tube {
     private Random random;
     private int tubeColor;
 
-    public Tube(int tubeX, int topTubeOffsetY){
+    public Tube(int tubeX, int topTubeOffsetY) {
         this.tubeX = tubeX;
         this.topTubeOffsetY = topTubeOffsetY;
         random = new Random();
     }
 
-    public void setTubeColor(){
+    public void setTubeColor() {
         tubeColor = random.nextInt(2);
     }
 
-    public int getTubeColor(){
+    public int getTubeColor() {
         return tubeColor;
     }
 
-    public int getTopTubeOffsetY(){
+    public int getTopTubeOffsetY() {
         return topTubeOffsetY;
     }
 
-    public int getTubeX(){
+    public int getTubeX() {
         return tubeX;
     }
 
-    public int getTopTubeY(){
+    public int getTopTubeY() {
         return topTubeOffsetY - AppConstants.getBitmapBank().getTubeHeight();
     }
 
-    public int getBottomTubeY(){
+    public int getBottomTubeY() {
         return topTubeOffsetY + AppConstants.gapBetweenTopAndBottomTubes;
     }
 
-    public void setTubeX(int tubeX){
+    public void setTubeX(int tubeX) {
         this.tubeX = tubeX;
     }
 
-    public void setTopTubeOffsetY(int topTubeOffsetY){
+    public void setTopTubeOffsetY(int topTubeOffsetY) {
         this.topTubeOffsetY = topTubeOffsetY;
     }
 }

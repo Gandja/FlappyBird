@@ -16,10 +16,10 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        if(!gameThread.isRunning()){
+        if (!gameThread.isRunning()) {
             gameThread = new GameThread(holder);
             gameThread.start();
-        }else {
+        } else {
             gameThread.start();
         }
     }
@@ -31,14 +31,15 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
-        if(gameThread.isRunning()){
+        if (gameThread.isRunning()) {
             gameThread.setIsRunning(false);
             boolean retry = true;
             while (retry) {
                 try {
                     gameThread.join();
                     retry = false;
-                }catch (InterruptedException e){}
+                } catch (InterruptedException e) {
+                }
             }
         }
     }
@@ -53,7 +54,13 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         int action = event.getAction();
-        if(action == MotionEvent.ACTION_DOWN){
+        if (action == MotionEvent.ACTION_DOWN) {
+            if (AppConstants.getGameEngine().gameState == 0) {
+                AppConstants.getGameEngine().gameState = 1;
+                AppConstants.getSoundBank().playSwoosh();
+            } else {
+                AppConstants.getSoundBank().playWing();
+            }
             AppConstants.getGameEngine().gameState = 1;
             AppConstants.getGameEngine().bird.setVelocity(AppConstants.VELOCITY_WIDTH_JUMPED);
         }
