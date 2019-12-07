@@ -7,8 +7,8 @@ import android.view.SurfaceHolder;
 
 public class GameThread extends Thread {
 
-    SurfaceHolder surfaceHolder; //Surfaceholder object reference
-    boolean isRunning;           //Flag to detect whetger the thread is running or not
+    SurfaceHolder surfaceHolder; //SurfaceHolder object reference
+    boolean isRunning;           //Flag to detect whether the thread is running or not
     long startTime, loopTime;   //Loop start time and loop duration
     long DELAY = 33;            //Delay in milliseconds between screen refreshes
 
@@ -28,6 +28,7 @@ public class GameThread extends Thread {
                 synchronized (surfaceHolder) {
                     AppConstants.getGameEngine().updateAndDrawBackgroundImage(canvas);
                     AppConstants.getGameEngine().updateAndDrawBird(canvas);
+                    AppConstants.getGameEngine().updateAndDrawTubes(canvas);
                     //unlocking the canvas
                     surfaceHolder.unlockCanvasAndPost(canvas);
                 }
